@@ -1,0 +1,31 @@
+﻿@model Camp_rating.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "Изтриване на потребител";
+}
+
+<h1>Изтриване на потребител</h1>
+
+<h3>Сигурни ли сте, че искате да изтриете този потребител?</h3>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Потребителско име</dt>
+        <dd class="col-sm-10">@Model.UserName</dd>
+
+        <dt class="col-sm-2">Имейл</dt>
+        <dd class="col-sm-10">@Model.Email</dd>
+
+        <dt class="col-sm-2">Име</dt>
+        <dd class="col-sm-10">@Model.FirstName</dd>
+
+        <dt class="col-sm-2">Фамилия</dt>
+        <dd class="col-sm-10">@Model.LastName</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Изтрий</button>
+        <a asp-action="Index" class="btn btn-secondary">Отказ</a>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+﻿@model Campsite
+
+<h2>Качване на изображение за @Model.Name</h2>
+
+<form asp-action="Upload" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <label>Текуща снимка:</label>
+        @if (!string.IsNullOrEmpty(Model.ImagePath))
+        {
+            <img src="@Model.ImagePath" alt="@Model.Name" style="max-width: 300px; max-height: 300px;" />
+        }
+        else
+        {
+            <p>Няма качена снимка</p>
+        }
+    </div>
+    <div class="form-group">
+        <label for="image">Изберете нова снимка:</label>
+        <input type="file" name="image" id="image" class="form-control" accept="image/*" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Качи</button>
+    <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-secondary">Отказ</a>
+</form>

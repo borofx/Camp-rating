@@ -1,0 +1,24 @@
+﻿@model Review
+
+<h2>Добавяне на ревю за @ViewBag.CampsiteName</h2>
+
+<form asp-action="Create" asp-route-campsiteId="@ViewBag.CampsiteId" method="post">
+    <div class="form-group">
+        <label asp-for="Name">Заглавие</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Съдържание</label>
+        <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Публикувай</button>
+    <a asp-controller="Campsite" asp-action="Details" asp-route-id="@ViewBag.CampsiteId" class="btn btn-secondary">Отказ</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
