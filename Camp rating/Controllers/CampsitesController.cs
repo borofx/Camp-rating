@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-public class CampsiteController : Controller
+public class CampsitesController : Controller
 {
     private readonly ApplicationDbContext _context;
     private readonly IWebHostEnvironment _environment;
 
-    public CampsiteController(ApplicationDbContext context, IWebHostEnvironment environment)
+    public CampsitesController(ApplicationDbContext context, IWebHostEnvironment environment)
     {
         _context = context;
         _environment = environment;

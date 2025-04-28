@@ -23,12 +23,12 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Search" asp-action="Index">Search</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Campsites" asp-action="Search">Search</a>
                         </li>
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Index">My Reviews</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Review" asp-action="Create">My Reviews</a>
                             </li>
                         }
                         @if (User.IsInRole("Admin"))
@@ -38,7 +38,7 @@
                                     Admin
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="adminDropdown">
-                                    <li><a class="dropdown-item" asp-controller="Campsites" asp-action="Index">Campsites</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Campsites" asp-action="Create">Campsites</a></li>
                                     <li><a class="dropdown-item" asp-controller="Reviews" asp-action="Create">Reviews</a></li>
                                     <li><a class="dropdown-item" asp-controller="Users" asp-action="Index">Users</a></li>
                                 </ul>
@@ -56,11 +56,6 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - CampRating - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
